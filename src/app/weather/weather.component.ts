@@ -45,6 +45,10 @@ export class WeatherComponent implements OnInit {
     return time
   }
 
+  getIcon() {
+    return `http://openweathermap.org/img/wn/${this.currentWeather?.weather[0].icon}@4x.png`
+  }
+
   getTheme() {
     return `c-weather--${this.getDatetime()}`
   }

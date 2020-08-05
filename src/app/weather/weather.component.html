@@ -13,7 +13,7 @@
   <div class="c-weather__primary">
     <div class="c-temperature-indicator">
       <div class="c-temperature-indicator__icon">
-        <img src="http://openweathermap.org/img/wn/10d@4x.png" />
+        <img [src]="getIcon()" />
       </div>
       <span class="c-temperature-indicator__current"
         >{{ this.currentWeather?.main.temp | number: "1.0-0" }}°</span
