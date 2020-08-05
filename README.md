@@ -1,27 +1,45 @@
-# MyApp
+# Stacja pogodowa / Weather station
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+Weather station is a project displaying weather information for Wroclaw city. Data is provided by [OpenWeater](http://openweathermap.org/).
 
-## Development server
+## Process
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+After creating information architecture, I planned UI on paper wireframes.
 
-## Code scaffolding
+![Paper prototype][1]
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Detailed screens were created in Figma. <em>Lato</em> and suplementary <em>Libre Franklin</em> were selected to give the UI lightness and maintain legibility.
 
-## Build
+![Monochrome scheme][2]
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+As background of the widget changes according to a part of the day (morning, afternoon, and evening), I created three color schemes:
 
-## Running unit tests
+- Morning
+- Afternoon
+- Evening
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Color schemes][6]
 
-## Running end-to-end tests
+Colors have best possible contrast ratio. Ratio was tested using: [Contrast ratio tool](https://contrast-ratio.com/).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![Morning][3]
+![Afternoon][4]
+![Evening][5]
 
-## Further help
+Finally the project was implemented using <em>Angular 9</em> and deployed to <em>Firebase</em>.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Visit the project: https://stacja-pogodowa-dbadd.web.app/
+
+## Development notes
+
+```
+firebase deploy
+ng build --prod --aot
+```
+
+[1]: ./docs/paper-wireframes.jpg
+[2]: ./docs/ui-001-monochrome.png
+[3]: ./docs/ui-002-morning.png
+[4]: ./docs/ui-003-afternoon.png
+[5]: ./docs/ui-004-night.png
+[6]: ./docs/colors.png
