@@ -1,0 +1,7 @@
+@import "../abstracts/variables";
+
+.weather-icon {
+  display: inline-block;
+  width: $font-size-3;
+  height: $font-size-3;
+}

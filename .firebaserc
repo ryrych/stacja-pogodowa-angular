@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "stacja-pogodowa-dbadd": {
+      "hosting": {
+        "stacja-pogodowa": [
+          "stacja-pogodowa-dbadd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "stacja-pogodowa-dbadd"
+  }
+}

@@ -1,0 +1,145 @@
+@import "../../assets/styles/abstracts/variables";
+
+/*------------------------------------*\
+    #WEATHER
+\*------------------------------------*/
+
+.c-weather {
+  &__primary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  &__secondary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+/*------------------------------------*\
+    #TOP BAR
+\*------------------------------------*/
+
+.c-top-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-height: $top-bar-height;
+  padding: 0 $spacing;
+
+  &__text {
+    font-size: $font-size-4;
+    font-family: $font-family-secondary;
+    margin: 0 auto;
+  }
+
+  &--with-action {
+    padding-right: 0;
+
+    .c-action-button {
+      margin-left: auto;
+    }
+  }
+}
+
+/*------------------------------------*\
+    #ACTION BUTTON
+\*------------------------------------*/
+
+.c-action-button {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+
+  min-height: 5 * $module;
+  min-width: 5 * $module;
+  border: 0;
+  border-radius: 0 0 0 $border-radius;
+  padding: 0 $spacing;
+
+  &:checked,
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+
+  &__body {
+    font-size: $font-size-4;
+    font-family: $font-family-secondary;
+  }
+}
+
+/*------------------------------------*\
+    #TEMPERATURE INDICATOR
+\*------------------------------------*/
+
+.c-temperature-indicator {
+  &__icon {
+    width: $font-size-1;
+    height: $font-size-1;
+    display: inline-block;
+
+    img {
+      width: 100%;
+      object-fit: scale-down;
+      display: block;
+    }
+  }
+
+  &__current {
+    font-size: $font-size-1;
+  }
+
+  &__feelslike {
+    font-size: $font-size-2;
+    display: inline-block;
+    margin-left: -($font-size-2 * 1.25);
+
+    &::before {
+      display: inline;
+      content: "/";
+    }
+  }
+
+  &__status {
+    display: block;
+    max-width: 62%;
+  }
+}
+
+/*------------------------------------*\
+    #WEATHER MEASURE
+\*------------------------------------*/
+
+.c-weather-measure {
+  display: flex;
+  align-items: center;
+  font-size: $font-size-3;
+  text-align: center;
+  justify-content: center;
+
+  &__value {
+    text-align: center;
+  }
+
+  &__value-smaller {
+    font-size: $font-size-4;
+  }
+}
+
+/*------------------------------------*\
+    #WEATHER STATUS
+\*------------------------------------*/
+
+.c-weather-status {
+  font-size: $font-size-4;
+  width: 10em;
+  text-align: center;
+}

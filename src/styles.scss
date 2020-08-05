@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    #ABSTRACTS
+\*------------------------------------*/
+@import "../src/assets/styles/abstracts/variables";
+@import "../src/assets/styles/abstracts/mixins";
+@import "../src/assets/styles/abstracts/helpers";
+@import "../src/assets/styles/abstracts/colors";
+
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
+@import "../src/assets/styles/base/reset";
+@import "../src/assets/styles/base/body";
+@import "../src/assets/styles/base/headings";
+@import "../src/assets/styles/base/main";
+@import "../src/assets/styles/base/links";
+@import "../src/assets/styles/base/icons";
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+@import "../src/assets/styles/layout/container";
+@import "../src/assets/styles/layout/layout-vertical";
+
+/*------------------------------------*\
+    #THEMES
+\*------------------------------------*/
+@import "../src/assets/styles/themes/themes";
