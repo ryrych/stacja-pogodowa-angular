@@ -32,9 +32,19 @@ Visit the project: https://stacja-pogodowa-dbadd.web.app/
 
 ## Development notes
 
+### Installation
+
 ```
-firebase deploy
+nvm use --lts --default
+npm i
+ng serve --open
+```
+
+### Prod
+
+```
 ng build --prod --aot
+ng deploy
 ```
 
 [1]: ./docs/paper-wireframes.jpg
