@@ -39,7 +39,7 @@ export class WeatherComponent implements OnInit {
     } else if (calculationHour < 18) {
       time = 'afternoon'
     } else {
-      time = 'evening'
+      time = 'night'
     }
 
     return time
