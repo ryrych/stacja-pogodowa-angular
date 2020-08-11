@@ -1,32 +1,43 @@
 # Stacja pogodowa / Weather station
 
-Weather station is a project displaying weather information for Wroclaw city. Data is provided by [OpenWeater](http://openweathermap.org/).
+Weather station is a project displaying weather information for Wroclaw city. Data is provided by [OpenWeather](http://openweathermap.org/).
 
 ## Process
 
-After creating information architecture, I planned UI on paper wireframes.
+Process took into account design phase and development phases.
+
+### Design phase
+
+1. Research: similar solutions
+2. Information architecture: how to display most important information
+3. Paper prototypes: for mobile and tablet devices, vertical and horizontal views
+4. Look & feel: layout, typography scale, fonts
+5. Detailed screens in Figma
+
+<em>Lato</em> and suplementary <em>Libre Franklin</em> were selected to give the UI lightness and maintain legibility. I chose <em>1.414</em> scale as it perfectly fits for temperature displayed at the top part of the layout.
 
 ![Paper prototype][1]
-
-Detailed screens were created in Figma. <em>Lato</em> and suplementary <em>Libre Franklin</em> were selected to give the UI lightness and maintain legibility.
+Paper prototypes
 
 ![Monochrome scheme][2]
+Monochrome version
 
-As background of the widget changes according to a part of the day (morning, afternoon, and evening), I created three color schemes:
+As background of the widget was supposed to change to a part of the day (morning, afternoon, and evening), the following color schemes were created:
 
 - Morning
 - Afternoon
 - Evening
 
-![Color schemes][6]
+![Color schemes][3]
 
-Colors have best possible contrast ratio. Ratio was tested using: [Contrast ratio tool](https://contrast-ratio.com/).
+Accessability was taken into account—colors have best possible contrast ratio. Ratio was tested using: [Contrast ratio tool](https://contrast-ratio.com/).
 
-![Morning][3]
-![Afternoon][4]
-![Evening][5]
+### Development phase
 
-Finally the project was implemented using <em>Angular 9</em> and deployed to <em>Firebase</em>.
+1. Static version (with Webpack)
+2. Angular version
+
+While working on the static version, I coded design with <em>SASS</em> spliting the code into modular parts. Finally the project was implemented using <em>Angular 9</em> and deployed to <em>Firebase</em>. For the <em>MVP</em> only mobile version with vertical layout was delivered.
 
 Visit the project: https://stacja-pogodowa-dbadd.web.app/
 
@@ -49,7 +60,6 @@ ng deploy
 
 [1]: ./docs/paper-wireframes.jpg
 [2]: ./docs/ui-001-monochrome.png
-[3]: ./docs/ui-002-morning.png
-[4]: ./docs/ui-003-afternoon.png
-[5]: ./docs/ui-004-night.png
-[6]: ./docs/colors.png
+[3]: ./docs/colors.png
+[4]: ./docs/ui-002-afternoon.png
+
