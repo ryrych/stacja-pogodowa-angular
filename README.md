@@ -1,12 +1,13 @@
 # Stacja pogodowa / Weather station
 
 ![Weather station during afternoon hours][4]
+https://stacja-pogodowa-dbadd.web.app/
 
 Weather station is a project displaying weather information for Wroclaw city. Data is provided by [OpenWeather](http://openweathermap.org/).
 
 ## Process
 
-Process took into account design phase and development phases.
+Process took into account design and development phases.
 
 ### Design phase
 
@@ -24,7 +25,7 @@ Paper prototypes
 ![Monochrome scheme][2]
 Monochrome version
 
-As background of the widget was supposed to change to a part of the day (morning, afternoon, and evening), the following color schemes were created:
+As background of the widget was supposed to reflect the part of the day (morning, afternoon, and evening), the following color schemes were created:
 
 - Morning
 - Afternoon
@@ -32,16 +33,16 @@ As background of the widget was supposed to change to a part of the day (morning
 
 ![Color schemes][3]
 
-Accessability was taken into account—colors have best possible contrast ratio. Ratio was tested using: [Contrast ratio tool](https://contrast-ratio.com/).
+Accessability was taken into account—colors have best possible contrast ratio. Ratio was tested with [Contrast ratio tool](https://contrast-ratio.com/).
 
 ### Development phase
 
 1. Static version (with Webpack)
 2. Angular version
 
-While working on the static version, I coded design with <em>SASS</em> spliting the code into modular parts. Finally the project was implemented using <em>Angular 9</em> and deployed to <em>Firebase</em>. For the <em>MVP</em> only mobile version with vertical layout was delivered.
+While working on the static version, styles were splitted into modular parts. Project does not use any CSS framework. It’s been built using [Atomic design](https://atomicdesign.bradfrost.com/) methodology. Finally the project was implemented using <em>Angular 9</em> and deployed to <em>Firebase</em>. For the <em>MVP</em> only mobile version with vertical layout was delivered.
 
-Visit the project: https://stacja-pogodowa-dbadd.web.app/
+Have fun and visit the project: https://stacja-pogodowa-dbadd.web.app/
 
 ## Development notes
 
