@@ -1,5 +1,7 @@
 # Stacja pogodowa / Weather station
 
+![Weather station during afternoon hours][4]
+
 Weather station is a project displaying weather information for Wroclaw city. Data is provided by [OpenWeather](http://openweathermap.org/).
 
 ## Process
