@@ -4,9 +4,9 @@
     #LAYOUT
 \*------------------------------------*/
 
-$primary-area: 320px;
+$primary-area: 17.777rem;
 $primary-area-min: 320px;
-$secondary-area: 208px;
+$secondary-area: 11.555rem;
 $secondary-area-min: 208px;
 // $primary-area: calc(62vh - $top-bar-height);
 // $primary-area-min: calc($l-vertical-max-height - $top-bar-height);
@@ -14,6 +14,8 @@ $secondary-area-min: 208px;
 // $secondary-area-min: calc($l-vertical-max-height * 0.38);
 
 .l-vertical {
+  width: $l-vertical-max-width;
+  height: $l-vertical-max-height;
   max-width: $l-vertical-max-width;
   max-height: $l-vertical-max-height;
   padding: 0;
@@ -26,4 +28,8 @@ $secondary-area-min: 208px;
       $primary-area
     )
     minmax($secondary-area-min, $secondary-area);
+
+  @media screen and (min-width: $bp-med) {
+    width: $bp-med;
+  }
 }

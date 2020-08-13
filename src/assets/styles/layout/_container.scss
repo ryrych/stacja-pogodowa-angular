@@ -1,10 +1,9 @@
 .l-container {
-  max-width: $l-max-width;
-  max-height: $l-vertical-max-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: $color-neutral-white;
-  padding: $spacing;
-
-  @media print {
-    padding: 0;
-  }
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
 }

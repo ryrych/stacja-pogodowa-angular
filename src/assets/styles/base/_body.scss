@@ -9,6 +9,10 @@
 html {
   font-size: $font-size-base;
   min-height: 100vh;
+
+  @media screen and (min-width: $bp-med) {
+    font-size: 30px;
+  }
 }
 
 /**
@@ -16,6 +20,7 @@ html {
  */
 body {
   min-height: 100vh;
+  min-width: 100vw;
   font-family: $font-family-primary;
   line-height: $line-height-text;
   background-color: $color-body-bg;
