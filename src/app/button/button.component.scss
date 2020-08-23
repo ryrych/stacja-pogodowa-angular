@@ -1,0 +1,48 @@
+@import "../../assets/styles/abstracts/variables";
+
+.c-action-button {
+  color: $color-neutral-grey-60;
+  background-color: $color-neutral-grey-95;
+
+  .c-weather--morning & {
+    transition-property: color, background-color;
+    transition-duration: 100ms;
+    transition-timing-function: ease-out;
+
+    color: $color-morning-20;
+    background-color: $color-morning-50;
+
+    &:hover {
+      background-color: $color-morning-20;
+      color: $color-morning-50;
+    }
+  }
+
+  .c-weather--afternoon & {
+    transition-property: color, background-color;
+    transition-duration: 100ms;
+    transition-timing-function: ease-out;
+
+    color: $color-afternoon-20;
+    background-color: $color-afternoon-70;
+
+    &:hover {
+      background-color: $color-afternoon-20;
+      color: $color-afternoon-70;
+    }
+  }
+
+  .c-weather--night & {
+    transition-property: color, background-color;
+    transition-duration: 100ms;
+    transition-timing-function: ease-out;
+
+    color: $color-night-20;
+    background-color: $color-night-75;
+
+    &:hover {
+      background-color: $color-night-20;
+      color: $color-night-75;
+    }
+  }
+}

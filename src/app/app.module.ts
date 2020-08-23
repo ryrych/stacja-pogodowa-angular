@@ -3,16 +3,23 @@ import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import { HttpClientModule } from '@angular/common/http'
 import { DateFnsModule } from 'ngx-date-fns'
-import { pl } from 'date-fns/locale'
-// import { DateFnsConfigurationService } from '../lib/src/date-fns-configuration.service'
 
 import { routes } from './routes'
 import { AppComponent } from './app.component'
 import { WeatherService } from './weather/weather.service'
 import { WeatherComponent } from './weather/weather.component'
+import { ButtonComponent } from './button/button.component'
+import { IconComponent } from './icon/icon.component'
+import { MeasureComponent } from './measure/measure.component'
 
 @NgModule({
-  declarations: [AppComponent, WeatherComponent],
+  declarations: [
+    AppComponent,
+    WeatherComponent,
+    ButtonComponent,
+    IconComponent,
+    MeasureComponent,
+  ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),

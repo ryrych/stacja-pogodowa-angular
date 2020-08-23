@@ -3,30 +3,11 @@
 .c-weather {
   color: $color-neutral-black;
   background: $color-neutral-white;
-
-  .c-action-button {
-    color: $color-neutral-grey-60;
-    background-color: $color-neutral-grey-95;
-  }
 }
 
 .c-weather--morning {
   color: $color-morning-20;
   background: $gradient-morning;
-
-  .c-action-button {
-    transition-property: color, background-color;
-    transition-duration: 100ms;
-    transition-timing-function: ease-out;
-
-    color: $color-morning-20;
-    background-color: $color-morning-50;
-
-    &:hover {
-      background-color: $color-morning-20;
-      color: $color-morning-50;
-    }
-  }
 
   .c-temperature-indicator {
     &__feelslike {
@@ -48,20 +29,6 @@
   color: $color-afternoon-20;
   background: $gradient-afternoon;
 
-  .c-action-button {
-    transition-property: color, background-color;
-    transition-duration: 100ms;
-    transition-timing-function: ease-out;
-
-    color: $color-afternoon-20;
-    background-color: $color-afternoon-70;
-
-    &:hover {
-      background-color: $color-afternoon-20;
-      color: $color-afternoon-70;
-    }
-  }
-
   .c-temperature-indicator {
     &__feelslike {
       color: $color-afternoon-25;
@@ -81,20 +48,6 @@
 .c-weather--night {
   color: $color-night-20;
   background: $gradient-night;
-
-  .c-action-button {
-    transition-property: color, background-color;
-    transition-duration: 100ms;
-    transition-timing-function: ease-out;
-
-    color: $color-night-20;
-    background-color: $color-night-75;
-
-    &:hover {
-      background-color: $color-night-20;
-      color: $color-night-75;
-    }
-  }
 
   .c-temperature-indicator {
     &__feelslike {

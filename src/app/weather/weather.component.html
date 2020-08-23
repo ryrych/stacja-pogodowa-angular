@@ -1,74 +1,46 @@
-<div class="c-weather l-vertical" [ngClass]="getTheme()">
+<div class="c-weather l-vertical" [ngClass]="widgetTheme()">
   <div class="c-top-bar c-top-bar--with-action">
     <div class="c-top-bar__text">
-      {{ this.currentWeather?.name }},
-      {{ this.weatherDate | dfnsFormat: "d/MM, HH:MM" }}
+      {{ weather.cityName }},
+      {{ weather.date | dfnsFormat: "d/MM, HH:MM" }}
+      <pre></pre>
     </div>
-    <button type="button" class="c-action-button" (click)="getWeather()">
-      <div class="c-top-bar__body">
-        Odśwież
-      </div>
-    </button>
+    <app-button onClick="getWeather"></app-button>
   </div>
   <div class="c-weather__primary">
     <div class="c-temperature-indicator">
       <div class="c-temperature-indicator__icon">
-        <img [src]="getIcon()" />
+        <img [src]="weather.iconUrl" />
       </div>
       <span class="c-temperature-indicator__current"
-        >{{ this.currentWeather?.main.temp | number: "1.0-0" }}°</span
+        >{{ weather.temperature.current | number: "1.0-0" }}°</span
       >
       <span class="c-temperature-indicator__feelslike">{{
-        this.currentWeather?.main.feels_like | number: "1.0-0"
+        weather.temperature.feelsLike | number: "1.0-0"
       }}</span>
     </div>
 
-    <span class="c-weather-status">{{
-      (this.currentWeather?.weather)[0].description
-    }}</span>
+    <span class="c-weather-status">{{ weather.description }}</span>
   </div>
   <div class="c-weather__secondary">
-    <div class="c-weather-measure">
-      <img
-        class="weather-icon"
-        src="assets/images/weather-icons/wi-thermometer.svg"
-      />
+    <app-measure name="thermometer">
+      {{ weather.temperature.min | number: "1.0-0" }}–{{
+        weather.temperature.max | number: "1.0-0"
+      }}°
+    </app-measure>
 
-      <span class="c-weather-measure__value"
-        >{{ this.currentWeather?.main.temp_min | number: "1.0-0" }}–{{
-          this.currentWeather?.main.temp_max | number: "1.0-0"
-        }}°</span
-      >
-    </div>
-    <div class="c-weather-measure">
-      <img
-        class="weather-icon"
-        src="assets/images/weather-icons/wi-humidity.svg"
-      />
-      <span class="c-weather-measure__value"
-        >{{ this.currentWeather?.main.humidity
-        }}<span class="c-weather-measure__value-smaller">%</span>
-      </span>
-    </div>
-    <div class="c-weather-measure">
-      <img
-        class="weather-icon"
-        src="assets/images/weather-icons/wi-barometer.svg"
-      />
-      <span class="c-weather-measure__value"
-        >{{ this.currentWeather?.main.pressure
-        }}<span class="c-weather-measure__value-smaller">Hpa</span></span
-      >
-    </div>
-    <div class="c-weather-measure">
-      <img
-        class="weather-icon"
-        src="assets/images/weather-icons/wi-cloud.svg"
-      />
-      <span class="c-weather-measure__value"
-        >{{ this.currentWeather?.clouds.all
-        }}<span class="c-weather-measure__value-smaller">%</span></span
-      >
-    </div>
+    <app-measure name="humidity">
+      {{ weather.humidity }}
+    </app-measure>
+
+    <app-measure name="barometer">
+      {{ weather.pressure
+      }}<span class="c-weather-measure__value-smaller">Hpa</span>
+    </app-measure>
+
+    <app-measure name="cloud">
+      {{ weather.clouds
+      }}<span class="c-weather-measure__value-smaller">%</span>
+    </app-measure>
   </div>
 </div>

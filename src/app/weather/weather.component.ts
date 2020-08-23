@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { interval } from 'rxjs'
-import { fromUnixTime } from 'date-fns'
+import { Weather, WeatherAdapter } from './weather.model'
 
 import { WeatherService } from './weather.service'
-
-type WeatherData = {
-  dt: number
-}
 
 @Component({
   selector: 'app-weather',
@@ -14,24 +10,45 @@ type WeatherData = {
   styleUrls: ['./weather.component.scss'],
 })
 export class WeatherComponent implements OnInit {
-  public currentWeather: any
-  public weatherDate: Date
-  constructor(private weatherService: WeatherService) {}
+  weather: Weather
+  constructor(
+    private weatherService: WeatherService,
+    private adapter: WeatherAdapter
+  ) {
+    this.weather = this.createPlaceholderWeather()
+  }
 
   ngOnInit(): void {
     this.getWeather()
     interval(1000 * 5).subscribe(() => this.getWeather())
   }
 
+  createPlaceholderWeather(): Weather {
+    return new Weather(
+      'Wroclaw',
+      new Date(),
+      '',
+      {
+        current: 0,
+        feelsLike: 0,
+        min: 0,
+        max: 0,
+      },
+      0,
+      0,
+      0,
+      '–'
+    )
+  }
+
   getWeather() {
-    this.weatherService.getCurrentWeather().subscribe((data: WeatherData) => {
-      this.currentWeather = data
-      this.weatherDate = fromUnixTime(data.dt)
+    this.weatherService.getCurrentWeather().subscribe((data: any) => {
+      this.weather = this.adapter.adapt(data)
     })
   }
 
   getDatetime() {
-    const calculationHour = this.weatherDate.getHours()
+    const calculationHour = this.weather.date.getHours()
     let time
 
     if (calculationHour < 12) {
@@ -45,11 +62,7 @@ export class WeatherComponent implements OnInit {
     return time
   }
 
-  getIcon() {
-    return `http://openweathermap.org/img/wn/${this.currentWeather?.weather[0].icon}@4x.png`
-  }
-
-  getTheme() {
+  widgetTheme() {
     return `c-weather--${this.getDatetime()}`
   }
 }
