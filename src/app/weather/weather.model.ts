@@ -18,6 +18,24 @@ export class Weather {
     public clouds: number,
     public description: string
   ) {}
+
+  static empty(): Weather {
+    return new Weather(
+      'Wroclaw',
+      new Date(),
+      '',
+      {
+        current: 0,
+        feelsLike: 0,
+        min: 0,
+        max: 0,
+      },
+      0,
+      0,
+      0,
+      '–'
+    )
+  }
 }
 
 @Injectable({

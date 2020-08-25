@@ -7,11 +7,27 @@ import { WeatherAdapter } from './weather.model'
   providedIn: 'root',
 })
 export class WeatherService {
-  private baseUrl = environment.apiUrl
-
   constructor(private http: HttpClient, private adapter: WeatherAdapter) {}
-  getCurrentWeather(): any {
-    const url = `${this.baseUrl}/weather?id=3081368&units=metric&&lang=pl&appid=${environment.apiKey}`
-    return this.http.get(url)
+
+  private cityIds = {
+    wroclaw: 3081368,
+  }
+
+  private findCityId(name: string): number {
+    return this.cityIds['wroclaw']
+  }
+
+  currentWeather(): any {
+    return this.http.get(this.getUrl('weather'))
+  }
+
+  private getUrl(path: string): string {
+    return `${environment.apiUrl}/${path}${this.getParams()}`
+  }
+
+  private getParams(): string {
+    return `?id=${this.findCityId('wroclaw')}&units=metric&lang=pl&appid=${
+      environment.apiKey
+    }`
   }
 }

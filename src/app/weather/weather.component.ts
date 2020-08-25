@@ -15,7 +15,7 @@ export class WeatherComponent implements OnInit {
     private weatherService: WeatherService,
     private adapter: WeatherAdapter
   ) {
-    this.weather = this.createPlaceholderWeather()
+    this.weather = Weather.empty()
   }
 
   ngOnInit(): void {
@@ -23,31 +23,24 @@ export class WeatherComponent implements OnInit {
     interval(1000 * 5).subscribe(() => this.getWeather())
   }
 
-  createPlaceholderWeather(): Weather {
-    return new Weather(
-      'Wroclaw',
-      new Date(),
-      '',
-      {
-        current: 0,
-        feelsLike: 0,
-        min: 0,
-        max: 0,
-      },
-      0,
-      0,
-      0,
-      '–'
-    )
-  }
-
   getWeather() {
-    this.weatherService.getCurrentWeather().subscribe((data: any) => {
+    this.weatherService.currentWeather().subscribe((data: any) => {
       this.weather = this.adapter.adapt(data)
     })
   }
 
-  getDatetime() {
+  minMaxTemp(): string {
+    let min = Math.round(this.weather.temperature.min)
+    let max = Math.round(this.weather.temperature.max)
+
+    if (min == max) {
+      return min + ''
+    }
+
+    return `${min}–${max}`
+  }
+
+  private getDatetime() {
     const calculationHour = this.weather.date.getHours()
     let time
 

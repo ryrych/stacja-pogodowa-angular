@@ -3,7 +3,6 @@
     <div class="c-top-bar__text">
       {{ weather.cityName }},
       {{ weather.date | dfnsFormat: "d/MM, HH:MM" }}
-      <pre></pre>
     </div>
     <app-button onClick="getWeather"></app-button>
   </div>
@@ -23,14 +22,11 @@
     <span class="c-weather-status">{{ weather.description }}</span>
   </div>
   <div class="c-weather__secondary">
-    <app-measure name="thermometer">
-      {{ weather.temperature.min | number: "1.0-0" }}–{{
-        weather.temperature.max | number: "1.0-0"
-      }}°
-    </app-measure>
+    <app-measure name="thermometer"> {{ minMaxTemp() }}° </app-measure>
 
     <app-measure name="humidity">
-      {{ weather.humidity }}
+      {{ weather.humidity
+      }}<span class="c-weather-measure__value-smaller">%</span>
     </app-measure>
 
     <app-measure name="barometer">

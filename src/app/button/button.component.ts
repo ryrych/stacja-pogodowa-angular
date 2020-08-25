@@ -10,7 +10,5 @@ export class ButtonComponent implements OnInit {
 
   title = 'Odśwież'
 
-  onClick() {}
-
   ngOnInit(): void {}
 }
